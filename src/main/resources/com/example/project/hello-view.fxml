@@ -4,10 +4,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.CubicCurve?>
-<?import javafx.scene.shape.Sphere?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cfcaae;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="300.0">
          <image>
@@ -17,12 +15,6 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
-      <CubicCurve controlX1="-75.4000244140625" controlX2="-67.4000244140625" controlY1="-0.9999908208847046" controlY2="80.79999542236328" endX="-150.0" endY="92.00000762939453" fill="#cfcaae" layoutX="449.0" startX="-149.0" startY="-0.9999939203262329" stroke="BLACK" />
-      <CubicCurve controlX1="-53.670013427734375" controlX2="-67.4000244140625" controlY2="80.79999542236328" endX="-154.0626220703125" endY="80.79998779296875" fill="#cfcaae" layoutX="449.0" layoutY="238.0" startX="-149.0" startY="-0.9999939203262329" stroke="BLACK" />
-      <CubicCurve controlX1="-53.670013427734375" controlX2="-67.4000244140625" controlY2="80.79999542236328" endX="-150.0626220703125" endY="82.99478149414062" fill="#cfcaae" layoutX="447.0" layoutY="83.0" startX="-149.0" startY="-0.9999939203262329" stroke="BLACK" />
-      <CubicCurve controlX1="-53.670013427734375" controlX2="-67.4000244140625" controlY2="80.79999542236328" endX="-156.0" endY="80.79998779296875" fill="#cfcaae" layoutX="448.0" layoutY="163.0" startX="-149.0" startY="-0.9999939203262329" stroke="BLACK" />
-      <CubicCurve controlX1="-67.4000244140625" controlX2="-67.4000244140625" controlY1="-1.0" controlY2="80.79999542236328" endX="-150.0" endY="92.00000762939453" fill="#cfcaae" layoutX="446.0" layoutY="309.0" startX="-149.0" startY="-0.9999939203262329" stroke="BLACK" />
-      <Sphere layoutX="490.0" layoutY="64.0" radius="20" />
 
    </children>
 </Pane>
