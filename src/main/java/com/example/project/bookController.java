@@ -1,20 +1,22 @@
 package com.example.project;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import java.net.URL;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.*;
+import java.util.ResourceBundle;
 
-public class bookController {
+public class bookController implements Initializable {
     @FXML
     private VBox bookVbox;
     @FXML
@@ -23,9 +25,52 @@ public class bookController {
     private Button menuebtn , srchbookbtn , addbookbtn , roombtn , inventorybtn;
     @FXML
     private TextField ISBNtxt , BookNametxt , Authortxt , Publishertxt , Pricetxt , Typetxt , Partstxt , BindingTypetxt , Yeartxt ,
-            Pagestxt , Availabletxt , Datetxt , RoomIDtxt ;
+            Pagestxt , Availabletxt , SerieTxt , Datetxt , RoomIDtxt ;
     @FXML
-    private TextArea RoomListView ;
+    private TextArea RoomListView , srcTxtarea ;
+
+    @FXML
+    private TableView<BookTable> Table;
+
+    @FXML
+    private TableColumn<BookTable, String> AuthorC;
+
+    @FXML
+    private TableColumn<BookTable, Integer> AvailableBookC;
+
+    @FXML
+    private TableColumn<BookTable, String> BindingTypeC;
+
+    @FXML
+    private TableColumn<BookTable, String> BookNameC;
+
+    @FXML
+    private TableColumn<BookTable, Date> DateC;
+
+
+    @FXML
+    private TableColumn<BookTable, Integer> ISBNC;
+
+    @FXML
+    private TableColumn<BookTable, Integer> PagesC;
+
+    @FXML
+    private TableColumn<BookTable, Integer> PartsC;
+
+    @FXML
+    private TableColumn<BookTable, Integer> PriceC;
+
+    @FXML
+    private TableColumn<BookTable, String> PublisherC;
+
+    @FXML
+    private TableColumn<BookTable, Integer> RoomIDC;
+
+    @FXML
+    private TableColumn<BookTable, String> TypeC;
+
+    @FXML
+    private TableColumn<BookTable, Integer> YearC;
 
     @FXML
     protected void onmenuebtnClick(ActionEvent e) {
@@ -149,4 +194,69 @@ public class bookController {
 
     }
 
+    @FXML
+    protected void onSearchbtnClick(ActionEvent e) {
+
+
+        String viewBook = "select * from book b where b.ISBN = " + ISBNtxt.getText() ;
+        try {
+            Statement st = DB.con.createStatement();
+            ResultSet re = st.executeQuery(viewBook);
+
+
+
+
+            while(re.next()){
+                int ISBN = re.getInt(1);
+                String bookName = re.getString(2);
+
+                BookTable BT = new BookTable(ISBN , bookName , " A", "B" , 1 , "C" , 5 , "D" ,2 , 3 ,6 , Date.valueOf("2015-03-31"), 10 );
+                ObservableList<BookTable> list = Table.getItems();
+                list.add(BT);
+                Table.setItems(list);
+            }
+            DB.con.commit();
+            DB.con.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR");
+            System.out.println(ex.toString());
+        }
+    }
+    @FXML
+    protected void onnewAddBtnClick(ActionEvent e) {
+        ISBNtxt.setText(" ");
+        RoomIDtxt.setText(" ");
+        BookNametxt.setText(" ");
+        Publishertxt.setText(" ");
+        Authortxt.setText(" ");
+        Pricetxt.setText(" ");
+        Yeartxt.setText(" ");
+        BindingTypetxt.setText(" ");
+        Typetxt.setText(" ");
+        Availabletxt.setText(" ");
+        Pagestxt.setText(" ");
+        SerieTxt.setText(" ");
+        Partstxt.setText(" ");
+        Datetxt.setText(" ");
+        srcTxtarea.setText(" ");
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ISBNC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("ISBN"));
+        BookNameC.setCellValueFactory(new PropertyValueFactory<BookTable,String>("bookname"));
+        AuthorC.setCellValueFactory(new PropertyValueFactory<BookTable,String>("author"));
+        PublisherC.setCellValueFactory(new PropertyValueFactory<BookTable,String>("publisher"));
+        PriceC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("price"));
+        TypeC.setCellValueFactory(new PropertyValueFactory<BookTable,String>("type"));
+        PartsC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("parts"));
+        BindingTypeC.setCellValueFactory(new PropertyValueFactory<BookTable,String>("bindingtype"));
+        YearC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("year"));
+        PagesC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("pages"));
+        AvailableBookC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("availablebook"));
+        DateC.setCellValueFactory(new PropertyValueFactory<BookTable,Date>("arrdate"));
+        RoomIDC.setCellValueFactory(new PropertyValueFactory<BookTable,Integer>("roomID"));
+
+    }
 }
