@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,13 +12,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.bookController">
+<AnchorPane fx:id="BookMainPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.bookController">
    <children>
-      <AnchorPane layoutX="8.0" layoutY="6.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #94760C; -fx-background-radius: 50px;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <AnchorPane layoutX="8.0" layoutY="6.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #94760C; -fx-background-radius: 50px;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
             <Label layoutX="43.0" layoutY="10.0" prefHeight="80.0" prefWidth="412.0" style="-fx-font-family: Serif; -fx-font-size: 40;" text="Dar Elelam Library" textFill="#fffdf3" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0" />
          </children></AnchorPane>
-      <AnchorPane layoutX="276.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #94760C; -fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: beig;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="115.0">
+      <AnchorPane layoutX="276.0" layoutY="113.0" prefHeight="100.0" prefWidth="1050.0" style="-fx-border-color: #94760C; -fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: beig;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="75.0">
          <children>
             <HBox layoutX="22.0" layoutY="14.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 50; -fx-background-color: beig;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -59,7 +58,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" style="-fx-background-radius: 50; -fx-background-color: beig;">
+                  <Button fx:id="GoToCustomerBtn" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="500.0" style="-fx-background-radius: 50; -fx-background-color: beig;">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0">
                            <image>
@@ -127,45 +126,28 @@
                      </graphic>
                   </Button>
                </children></VBox>
-            <AnchorPane fx:id="srchbookpane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+            <AnchorPane fx:id="srchbookpane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
                   <Label layoutX="58.0" layoutY="55.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="ISBN" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="55.0" />
                   <Label layoutX="58.0" layoutY="85.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Book name" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="85.0" />
                   <Label layoutX="58.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Author" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="115.0" />
-                  <Label layoutX="58.0" layoutY="145.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Year" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="145.0" />
-                  <Label layoutX="58.0" layoutY="175.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="type" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="175.0" />
-                  <Label layoutX="58.0" layoutY="205.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Pages" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="205.0" />
-                  <Label layoutX="58.0" layoutY="235.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Parts" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="235.0" />
-                  <Label layoutX="308.0" layoutY="55.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Room ID" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="55.0" />
-                  <Label layoutX="308.0" layoutY="85.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Publisher" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="85.0" />
-                  <Label layoutX="308.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Price" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="115.0" />
-                  <Label layoutX="308.0" layoutY="145.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Binding Type" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="145.0" />
-                  <Label layoutX="308.0" layoutY="175.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="# Available" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="175.0" />
-                  <Label layoutX="308.0" layoutY="205.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Serie" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="205.0" />
-                  <Label layoutX="308.0" layoutY="235.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Date" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="235.0" />
-                  <TextField fx:id="Partstxt" layoutX="158.0" layoutY="231.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField fx:id="Pagestxt" layoutX="158.0" layoutY="201.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField fx:id="Typetxt" layoutX="158.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField fx:id="Yeartxt" layoutX="158.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <Label layoutX="308.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="type" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="115.0" />
+                  <Label layoutX="309.0" layoutY="54.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Publisher" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="55.0" />
+                  <Label layoutX="308.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Price" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="85.0" />
+                  <TextField fx:id="Typetxt" layoutX="400.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
                   <TextField fx:id="Authortxt" layoutX="158.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
                   <TextField fx:id="BookNametxt" layoutX="158.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
                   <TextField fx:id="ISBNtxt" layoutX="158.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField fx:id="Datetxt" layoutX="400.0" layoutY="231.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField fx:id="SerieTxt" layoutX="400.0" layoutY="201.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField fx:id="Availabletxt" layoutX="400.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField fx:id="BindingTypetxt" layoutX="400.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField fx:id="Pricetxt" layoutX="400.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField fx:id="Publishertxt" layoutX="400.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField fx:id="RoomIDtxt" layoutX="400.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <Button fx:id="SrchBtn" layoutX="538.0" layoutY="231.0" mnemonicParsing="false" onAction="#onSearchbtnClick" style="-fx-background-color: #8FC88C;" text="SEARCH" />
-                  <Button fx:id="newAddBtn" layoutX="618.0" layoutY="231.0" mnemonicParsing="false" onAction="#onnewAddBtnClick" style="-fx-background-color: #8FC88C;" text="NEW" />
-                  <ScrollPane layoutX="50.0" layoutY="268.0" prefHeight="100.0" prefWidth="428.0">
+                  <TextField fx:id="Pricetxt" layoutX="400.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="Publishertxt" layoutX="400.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="50.0" />
+                  <Button fx:id="SrchBtn" layoutX="500.0" layoutY="150.0" mnemonicParsing="false" onAction="#onSearchbtnClick" style="-fx-background-color: #8FC88C;" text="SEARCH" />
+                  <Button fx:id="newAddBtn" layoutX="581.0" layoutY="150.0" mnemonicParsing="false" onAction="#onnewAddBtnClick" style="-fx-background-color: #8FC88C;" text="NEW" />
+                  <ScrollPane layoutX="58.0" layoutY="211.0" prefHeight="118.0" prefWidth="428.0">
                      <content>
-                        <TableView fx:id="Table" prefHeight="100.0" prefWidth="980.0">
+                        <TableView fx:id="Table" prefHeight="1000.0" prefWidth="1050.0">
                           <columns>
                             <TableColumn fx:id="ISBNC" prefWidth="70.0" text="ISBN" />
                             <TableColumn fx:id="BookNameC" prefWidth="70.0" text="Book name" />
-                              <TableColumn fx:id="AuthorC" minWidth="3.20001220703125" prefWidth="70.0" text="Author" />
                               <TableColumn fx:id="PublisherC" prefWidth="70.0" text="Publisher" />
                               <TableColumn fx:id="PriceC" prefWidth="70.0" text="Price" />
                               <TableColumn fx:id="TypeC" prefWidth="70.0" text="Type" />
@@ -176,63 +158,104 @@
                               <TableColumn fx:id="AvailableBookC" prefWidth="70.0" text="Available book" />
                               <TableColumn fx:id="DateC" prefWidth="70.0" text="Date" />
                               <TableColumn fx:id="RoomIDC" prefWidth="70.0" text="Room ID" />
-                              <TableColumn prefWidth="70.0" text="C1" />
+                              <TableColumn fx:id="ColumnsC" prefWidth="70.0" text="Column" />
+                              <TableColumn fx:id="ShelveC" prefWidth="70.0" text="Shelve" />
+                              <TableColumn fx:id="AuthorC" minWidth="3.20001220703125" prefWidth="70.0" text="Author" />
                           </columns>
                         </TableView>
                      </content>
                   </ScrollPane>
+                  <Button fx:id="SrchBtn1" layoutX="14.0" layoutY="342.0" mnemonicParsing="false" onAction="#onUpdateBookBtnClick" style="-fx-background-color: #8FC88C;" text="UPDATE" />
+                  <Label layoutX="66.0" layoutY="153.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="AMOUNT" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="160.0" />
+                  <TextField fx:id="amontBuyTxt" layoutX="158.0" layoutY="156.0" prefHeight="20.0" prefWidth="100.0" />
+                  <Label fx:id="warningTxt" layoutX="60.0" layoutY="182.0" prefHeight="18.0" prefWidth="412.0" text="The amount of books you are trying to sell is more than the books we have ." textFill="RED" visible="false" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="addbookpane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+            <AnchorPane fx:id="addbookpane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
                <children>
                   <Label layoutX="58.0" layoutY="55.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="ISBN" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="55.0" />
                   <Label layoutX="58.0" layoutY="85.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Book name" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="85.0" />
                   <Label layoutX="58.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Author" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="115.0" />
-                  <Label layoutX="58.0" layoutY="145.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Year" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="145.0" />
-                  <Label layoutX="58.0" layoutY="175.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="type" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="175.0" />
-                  <Label layoutX="58.0" layoutY="205.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Size" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="205.0" />
+                  <Label layoutX="58.0" layoutY="145.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Publisher" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="145.0" />
+                  <Label layoutX="58.0" layoutY="175.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Price" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="175.0" />
+                  <Label layoutX="58.0" layoutY="205.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Type" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="205.0" />
                   <Label layoutX="58.0" layoutY="235.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Parts" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="235.0" />
-                  <Label layoutX="308.0" layoutY="55.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="menu" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="55.0" />
-                  <Label layoutX="308.0" layoutY="85.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Publisher" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="85.0" />
-                  <Label layoutX="308.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Price" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="115.0" />
-                  <Label layoutX="308.0" layoutY="145.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Binding Type" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="145.0" />
-                  <Label layoutX="308.0" layoutY="175.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="# Available" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="175.0" />
-                  <Label layoutX="308.0" layoutY="205.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Serie" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="205.0" />
-                  <Label layoutX="308.0" layoutY="235.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Date" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="235.0" />
-                  <TextField layoutX="158.0" layoutY="231.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="158.0" layoutY="201.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="158.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="158.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="158.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="158.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="158.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
-                  <TextField layoutX="400.0" layoutY="231.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField layoutX="400.0" layoutY="201.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField layoutX="400.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField layoutX="400.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField layoutX="400.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField layoutX="400.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <TextField layoutX="400.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
-                  <Button layoutX="538.0" layoutY="266.0" mnemonicParsing="false" style="-fx-background-color: #8FC88C;" text="ADD" />
+                  <Label layoutX="308.0" layoutY="55.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Pages" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="55.0" />
+                  <Label layoutX="308.0" layoutY="85.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Binding type" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="85.0" />
+                  <Label layoutX="308.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Year" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="115.0" />
+                  <Label layoutX="308.0" layoutY="145.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Room ID" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="145.0" />
+                  <Label layoutX="308.0" layoutY="175.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Column" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="175.0" />
+                  <Label layoutX="308.0" layoutY="205.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Shelve" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="205.0" />
+                  <Label layoutX="308.0" layoutY="235.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Amount" AnchorPane.leftAnchor="308.0" AnchorPane.topAnchor="235.0" />
+                  <TextField fx:id="t7" layoutX="158.0" layoutY="231.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t6" layoutX="158.0" layoutY="201.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t5" layoutX="158.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t4" layoutX="158.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t3" layoutX="158.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t2" layoutX="158.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t1" layoutX="158.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="158.0" />
+                  <TextField fx:id="t14" layoutX="400.0" layoutY="231.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="t13" layoutX="400.0" layoutY="201.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="t12" layoutX="400.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="t11" layoutX="400.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="t9" layoutX="400.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="t8" layoutX="400.0" layoutY="81.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <TextField fx:id="t10" layoutX="400.0" layoutY="51.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="400.0" />
+                  <Button layoutX="459.0" layoutY="306.0" mnemonicParsing="false" onAction="#onaddBtnClick" style="-fx-background-color: #8FC88C;" text="ADD" />
+                  <Button layoutX="550.0" layoutY="306.0" mnemonicParsing="false" onAction="#onNEWBtnClick" style="-fx-background-color: #8FC88C;" text="NEW" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="inventorypane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <Label layoutX="55.0" layoutY="51.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Room" AnchorPane.leftAnchor="50.0" />
-                  <Label layoutX="241.0" layoutY="51.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Column" AnchorPane.leftAnchor="240.0" />
-                  <Label layoutX="50.0" layoutY="103.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Book name" />
-                  <TextField layoutX="130.0" layoutY="99.0" prefHeight="20.0" prefWidth="100.0" />
-                  <Label layoutX="433.0" layoutY="50.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Shelve" AnchorPane.leftAnchor="430.0" />
-                  <TextField layoutX="132.0" layoutY="47.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="130.0" />
-                  <TextField layoutX="323.0" layoutY="47.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="320.0" />
-                  <TextField layoutX="514.0" layoutY="47.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="510.0" />
-                  <Button layoutX="310.0" layoutY="99.0" mnemonicParsing="false" style="-fx-background-color: #BDEABA;" text="ADD" />
-                  <TextArea layoutX="96.0" layoutY="173.0" prefHeight="100.0" prefWidth="522.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="150.0" />
+                  <Label layoutX="55.0" layoutY="51.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Room" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0" />
+                  <Label layoutX="50.0" layoutY="107.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Column" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0" />
+                  <Label layoutX="256.0" layoutY="106.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Shelve" AnchorPane.leftAnchor="256.0" AnchorPane.topAnchor="100.0" />
+                  <TextField fx:id="InRIDTxt" layoutX="130.0" layoutY="46.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="130.0" />
+                  <TextField fx:id="InColumnTxt" layoutX="130.0" layoutY="96.0" prefHeight="20.0" prefWidth="100.0" AnchorPane.leftAnchor="130.0" />
+                  <Button fx:id="InvSrchBtn" layoutX="545.0" layoutY="96.0" mnemonicParsing="false" onAction="#onInvSrchBtnClick" style="-fx-background-color: #BDEABA;" text="SEARCH" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="96.0" />
+                  <TableView fx:id="inventoryTbl" layoutX="46.0" layoutY="166.0" prefHeight="200.0" prefWidth="560.0" AnchorPane.leftAnchor="46.0">
+                    <columns>
+                      <TableColumn fx:id="InISBNC" text="ISBN" />
+                      <TableColumn fx:id="InNameC" text="Name" />
+                        <TableColumn fx:id="InAuthorC" text="Author" />
+                        <TableColumn fx:id="InPublisherC" text="Publisher" />
+                        <TableColumn fx:id="InTypeC" text="Type" />
+                        <TableColumn fx:id="InPriceC" text="Price" />
+                        <TableColumn fx:id="InAmountC" text="Amount" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="InvADDBtn1" layoutX="575.0" layoutY="378.0" mnemonicParsing="false" onAction="#onInvADDBtnClick" style="-fx-background-color: #BDEABA;" text="ADD --&gt;" />
+                  <TextField fx:id="InShelveTxt" layoutX="337.0" layoutY="96.0" prefHeight="20.0" prefWidth="100.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="roompane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <TextArea fx:id="RoomListView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                  <TableView fx:id="RoomTbl" layoutX="17.0" layoutY="14.0" prefHeight="352.0" prefWidth="630.0">
+                    <columns>
+                      <TableColumn fx:id="RoomIDColumns" prefWidth="126.0" text="Room ID" />
+                      <TableColumn fx:id="RoomNameC" prefWidth="126.0" text="Name" />
+                        <TableColumn fx:id="RoomColumnsC" prefWidth="126.0" text="Columns" />
+                        <TableColumn fx:id="RoomShelvesC" prefWidth="126.0" text="Shelves" />
+                        <TableColumn fx:id="RoomBooksC" prefWidth="126.0" text="Books" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="inventorypane2" layoutX="338.0" layoutY="194.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Room" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0" />
+                  <Label layoutX="265.0" layoutY="150.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Amount" AnchorPane.leftAnchor="265.0" AnchorPane.topAnchor="150.0" />
+                  <Label layoutX="265.0" layoutY="100.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Shelve" AnchorPane.leftAnchor="265.0" AnchorPane.topAnchor="100.0" />
+                  <Label layoutX="50.0" layoutY="176.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="ISBN" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="150.0" />
+                  <Label layoutX="45.0" layoutY="115.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #BDEABA;" text="Column" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0" />
+                  <TextField fx:id="Column2Txt" layoutX="129.0" layoutY="96.0" prefHeight="26.0" prefWidth="100.0" />
+                  <TextField fx:id="InvAmount2Txt" layoutX="344.0" layoutY="146.0" prefHeight="26.0" prefWidth="100.0" />
+                  <TextField fx:id="Shelve2Txt" layoutX="344.0" layoutY="96.0" prefHeight="26.0" prefWidth="100.0" />
+                  <TextField fx:id="InvISBN2Txt" layoutX="129.0" layoutY="146.0" prefHeight="26.0" prefWidth="100.0" />
+                  <TextField fx:id="Room2Txt" layoutX="129.0" layoutY="46.0" prefHeight="26.0" prefWidth="100.0" />
+                  <Button fx:id="InvAdd2Btn" layoutX="50.0" layoutY="209.0" mnemonicParsing="false" onAction="#onInvADD2BtnClick" style="-fx-background-color: #BDEABA;" text="ADD" AnchorPane.topAnchor="220.0" />
+                  <Button fx:id="InvSEARCH2Btn" layoutX="574.0" layoutY="378.0" mnemonicParsing="false" onAction="#onInvSEARCH2BtnClick" style="-fx-background-color: #BDEABA;" text="SEARCH --&gt;" />
+                  <Button fx:id="InvNEW2Btn" layoutX="157.0" layoutY="219.0" mnemonicParsing="false" onAction="#onInvNEW2BtnClick" style="-fx-background-color: #BDEABA;" text="NEW" />
                </children>
             </AnchorPane>
          </children>

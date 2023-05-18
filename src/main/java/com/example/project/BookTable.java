@@ -2,10 +2,10 @@ package com.example.project;
 
 import java.sql.*;
 public class BookTable {
-    private int ISBN , price , parts , year , pages , availablebook , roomID ;
+    private int ISBN , price , parts , year , pages , availablebook , roomID , columns , shelves ;
     private String bookname , author , publisher ,type , bindingtype ;
-    Date arrdate ;
-    public BookTable (int ISBN ,String bookname , String author , String publisher , int price , String type , int parts , String bindingtype , int year , int pages , int availablebook , Date arrdate , int roomID ){
+    private Date arrdate ;
+    public BookTable (int ISBN ,String bookname , String author , String publisher , int price , String type , int parts , String bindingtype , int year , int pages , int availablebook , Date arrdate , int roomID , int columns , int shelves){
         this.ISBN = ISBN ;
         this.bookname = bookname ;
         this.author = author ;
@@ -19,6 +19,8 @@ public class BookTable {
         this.availablebook = availablebook ;
         this.arrdate = arrdate ;
         this.roomID = roomID ;
+        this.columns = columns ;
+        this.shelves = shelves ;
     }
     public int getISBN(){
         return ISBN ;
@@ -58,5 +60,11 @@ public class BookTable {
     }
     public int getRoomID(){
         return roomID ;
+    }
+    public int getColumns (){
+        return columns ;
+    }
+    public int getShelves(){
+        return shelves ;
     }
 }
